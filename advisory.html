@@ -82,11 +82,11 @@
       <div class="feature">
         <div class="side"><p class="num">01</p><hr class="rule"><h3>B2Cization</h3></div>
         <div>
-          <p class="lede">Rethink the role of intermediaries, strengthen customer relationships, and decide where direct engagement creates genuine competitive advantage.</p>
+          <p class="lede">Rethink the role of intermediaries, strengthen customer relationships, and decide where going direct creates genuine competitive advantage.</p>
           <ul class="qlist">
             <li>Which parts of the customer relationship are we renting from someone else, and what does that cost us in margin and in knowledge?</li>
             <li>Where does going direct create real advantage, and where does it only add cost and conflict with the partners we depend on?</li>
-            <li>What has to be true operationally &mdash; data, logistics, service, pricing &mdash; before direct engagement pays for itself?</li>
+            <li>What has to be true operationally &mdash; data, logistics, service, pricing &mdash; before going direct pays for itself?</li>
           </ul>
         </div>
       </div>
@@ -172,7 +172,7 @@
     </div>
   </nav>
 </div>
-<div class="wrap fbottom"><span>&copy; 2026 GS&amp;Partners &middot; P.IVA [VAT number] &middot; [Registered office address]</span><span class="legal">[Privacy policy link] &middot; [Cookie policy link]</span></div>
+<div class="wrap fbottom"><span>&copy; 2026 GS&amp;Partners &middot; P.IVA [VAT number] &middot; [Registered office address]</span><span class="legal">[Privacy policy link] &middot; [Cookie policy link] &middot; <button type="button" class="linkbtn" data-cookie-settings>Cookie settings</button></span></div>
 </footer>
 <script>
 (function(){
@@ -334,6 +334,35 @@
     var el=e.target, sib=el.parentElement?[].indexOf.call(el.parentElement.children,el):0;
     el.style.animationDelay=Math.min(sib,4)*70+"ms"; el.classList.add("rv-in"); io.unobserve(el); });},{rootMargin:"0px 0px 80px 0px"});
   els.forEach(function(el){io.observe(el);});
+})();
+</script>
+<div class="cookiebar" id="cookiebar" role="dialog" aria-modal="false" aria-labelledby="cb-title" hidden>
+  <div class="cb-inner">
+    <div class="cb-text">
+      <p class="cb-title" id="cb-title">Your privacy</p>
+      <p>We use essential cookies to make this site work. With your consent, we would also use analytics cookies to understand how the site is used and improve it. You can change your choice at any time. <span class="cb-policy">[Cookie policy link]</span></p>
+    </div>
+    <div class="cb-actions">
+      <button type="button" class="btn ghost sm" data-consent="rejected">Reject non-essential</button>
+      <button type="button" class="btn sm" data-consent="accepted">Accept all</button>
+    </div>
+    <button type="button" class="cb-close" data-consent="rejected" aria-label="Close and reject non-essential cookies">&times;</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY="gsp-cookie-consent", bar=document.getElementById("cookiebar");
+  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function apply(v){
+    window.gspConsent=v;
+    try{window.dispatchEvent(new CustomEvent("gsp:consent",{detail:v}));}catch(e){}
+    /* When analytics is added, load it here only if v==="accepted". */
+  }
+  function show(){bar.hidden=false;}
+  function choose(v){try{localStorage.setItem(KEY,v);}catch(e){} bar.hidden=true; apply(v);}
+  [].forEach.call(bar.querySelectorAll("[data-consent]"),function(b){b.addEventListener("click",function(){choose(b.getAttribute("data-consent"));});});
+  [].forEach.call(document.querySelectorAll("[data-cookie-settings]"),function(b){b.addEventListener("click",function(e){e.preventDefault();show();});});
+  var v=get(); if(v){apply(v);} else {show();}
 })();
 </script>
 </body>

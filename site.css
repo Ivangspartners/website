@@ -685,7 +685,7 @@ footer .fhead a,footer nav .fhead a{font:inherit;letter-spacing:inherit;color:in
 .fcontact a{color:inherit;text-underline-offset:3px}
 .fcontact a:hover{color:var(--on-band)}
 
-/* LinkedIn link beside each partner's name */
-.person h3 .li{display:inline-block;vertical-align:-2px;margin-left:6px;line-height:0;border-radius:4px}
-.person h3 .li img{width:18px;height:18px;display:block;border-radius:4px}
-@media (prefers-reduced-motion:no-preference){.person h3 .li{transition:transform .2s ease}.person h3 .li:hover{transform:translateY(-2px)}}
+/* LinkedIn link under each partner's title */
+.person .role .li{display:block;width:max-content;margin-top:8px;line-height:0;border-radius:3px}
+.person .role .li img{width:14px;height:14px;display:block;border-radius:3px}
+@media (prefers-reduced-motion:no-preference){.person .role .li{transition:transform .2s ease}.person .role .li:hover{transform:translateY(-2px)}}

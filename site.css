@@ -678,3 +678,14 @@ footer .fhead a,footer nav .fhead a{font:inherit;letter-spacing:inherit;color:in
 @media (prefers-reduced-motion:no-preference){.cookiebar:not([hidden]) .cb-inner{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}}
 .linkbtn{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .linkbtn:hover{color:var(--on-band)}
+
+/* footer company details */
+.fcontact{font-style:normal;display:flex;flex-direction:column;gap:6px;margin-top:22px;font-size:.86rem;line-height:1.55;color:color-mix(in srgb,var(--on-band) 66%,transparent);max-width:44ch}
+.fcontact b{color:var(--on-band);font-weight:600}
+.fcontact a{color:inherit;text-underline-offset:3px}
+.fcontact a:hover{color:var(--on-band)}
+
+/* LinkedIn link beside each partner's name */
+.person h3 .li{display:inline-block;vertical-align:-2px;margin-left:6px;line-height:0;border-radius:4px}
+.person h3 .li img{width:18px;height:18px;display:block;border-radius:4px}
+@media (prefers-reduced-motion:no-preference){.person h3 .li{transition:transform .2s ease}.person h3 .li:hover{transform:translateY(-2px)}}
